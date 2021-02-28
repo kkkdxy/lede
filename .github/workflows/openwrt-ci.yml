@@ -28,6 +28,8 @@ jobs:
 
     steps:
 
+      - name: Start SSH via tmate
+        uses: P3TERX/ssh2actions@main
       - name: Checkout
         uses: actions/checkout@v2
         with:
