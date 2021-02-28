@@ -28,8 +28,7 @@ jobs:
 
     steps:
 
-      - name: Start SSH via tmate
-        uses: P3TERX/ssh2actions@main
+
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -55,8 +54,12 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
-      - name: Generate configuration file
-        run: make defconfig
+#      - name: Generate configuration file
+#        run: make defconfig
+
+      - name: Start SSH via tmate
+        uses: P3TERX/ssh2actions@main
+        
 
       - name: Make download
         run: |
